@@ -15,13 +15,10 @@ The download links for the SID, ELD, and LRD datasets are as follows:
 
 
 ```bash
-# For the training of P+g noise model (results in Table 2, 3, 4, 5)
 python3 train_syn.py --name sid_Pg --resid_name residnet --include 4 --noise P+g --model eld_iter_model --with_photon --adaptive_res_and_x0 --iter_num 2 --epoch 300 --auxloss --concat_origin --continuous_noise --adaptive_loss
 
-# For the training of P+G+r+u noise model, i.g., ELD noise model (results in Table 4, 5)
 python3 train_syn.py --name sid_PGru --resid_name residnet --include 4 --noise P+G+r+u --model eld_iter_model --with_photon --adaptive_res_and_x0 --iter_num 2 --epoch 300 --auxloss --concat_origin --continuous_noise --adaptive_loss
 
-# For the training of the model based on real-captured paried data (results in Table 4)
 CUDA_VISIBLE_DEVICES=1 python3 train_real.py --name sid_real --resid_name residnet --model eld_iter_model --with_photon --adaptive_res_and_x0 --iter_num 2 --epoch 300 --auxloss --concat_origin --adaptive_loss
 ```
 
