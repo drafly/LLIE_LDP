@@ -30,10 +30,8 @@ You can download the pre-trained models from [google drive](https://drive.google
 ## Test
 
 ```bash
-# Test of the ELD+NAFNet model
 python3 test_ELD.py --model eld_iter_model --model_path "the path of the ckpt" --include 4 --with_photon --adaptive_res_and_x0 -r --iter_num 2 --netG naf2 --concat_origin --resid_model_path "the path of the ckpt"
 
 
-# Test of the Pg+NAFNet model
 python3 test_SID.py --model eld_iter_model --model_path "the path of the ckpt" --include 4 --with_photon --adaptive_res_and_x0 -r --iter_num 2 --netG naf2 --concat_origin --resid_model_path "the path of the ckpt"
 ```
