@@ -23,7 +23,7 @@ traindir = '/root/autodl-tmp/train'
 EV = [-1, -2, -3]  # [100, 300]
 
 
-EVs_ids = dataset.read_paired_fns('/root/autodl-tmp/LRD/LRD_test_list.txt')
+EVs_ids = dataset.read_paired_fns('/root/autodl-tmp/LRD/LRD_val_list.txt')
 
 eval_fns_list = [
     [(fn[0], fn[1], fn[2]) for fn in EVs_ids if int(fn[3].replace('EV', '')) == ev]
