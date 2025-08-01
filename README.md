@@ -35,12 +35,10 @@ python3 test_ELD.py --model eld_iter_model --model_path "the path of the ckpt" -
 
 python3 test_SID.py --model eld_iter_model --model_path "the path of the ckpt" --include 4 --with_photon --adaptive_res_and_x0 -r --iter_num 2 --netG naf2 --concat_origin --resid_model_path "the path of the ckpt"
 ```
-
 ## Citation
 
 If you find our repo useful for your research, please consider citing our paper:
 
-```
 ## Acknowledgement
 
 This work is largely inspired by [ExposureDiffusion](https://github.com/wyf0912/ExposureDiffusion) and [DNF](https://github.com/Srameo/DNF). We sincerely thank the authors of these works for their valuable contributions, which have provided important guidance and insight for our research.
