@@ -44,7 +44,7 @@ python3 test_LRD.py --model eld_iter_model --model_path "the path of the ckpt" -
 If you find our repo useful for your research, please consider citing our paper:
 
 ```bibtex
-@inproceedings{hanLDR,
+@inproceedings{Han2025,
     title={Low-light Image Denoising with Learnable Diffusion Prior},
     author={Han, Longfei and Wang, Mengzhen},
     journal={Signal, Image and Video Processing},
