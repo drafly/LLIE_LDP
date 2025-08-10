@@ -17,7 +17,9 @@ The download links for the SID, ELD, and LRD datasets are as follows:
 ```bash
 python3 train_syn.py --name sid_Pg --resid_name residnet --include 4 --noise P+g --model eld_iter_model --with_photon --adaptive_res_and_x0 --iter_num 2 --epoch 300 --auxloss --concat_origin --continuous_noise --adaptive_loss
 
-python3 train_syn.py --name sid_PGru --resid_name residnet --include 4 --noise P+G+r+u --model eld_iter_model --with_photon --adaptive_res_and_x0 --iter_num 2 --epoch 300 --auxloss --concat_origin --continuous_noise --adaptive_loss
+python3 train_syn.py --name sid_Pg --resid_name residnet --include 4 --noise P+G+r+u --model eld_iter_model --with_photon --adaptive_res_and_x0 --iter_num 2 --epoch 300 --auxloss --concat_origin --continuous_noise --adaptive_loss
+
+python3 LRD.py --name sid_Pg --resid_name residnet --include 4 --noise P+G+r+u --model eld_iter_model --with_photon --adaptive_res_and_x0 --iter_num 2 --epoch 300 --auxloss --concat_origin --continuous_noise --adaptive_loss
 
 CUDA_VISIBLE_DEVICES=1 python3 train_real.py --name sid_real --resid_name residnet --model eld_iter_model --with_photon --adaptive_res_and_x0 --iter_num 2 --epoch 300 --auxloss --concat_origin --adaptive_loss
 ```
@@ -30,14 +32,25 @@ You can download the pre-trained models from [google drive](https://drive.google
 ## Test
 
 ```bash
-python3 test_ELD.py --model eld_iter_model --model_path "the path of the ckpt" --include 4 --with_photon --adaptive_res_and_x0 -r --iter_num 2 --netG naf2 --concat_origin --resid_model_path "the path of the ckpt"
+python3 test_ELD.py --model eld_iter_model --model_path "the path of the ckpt" --include 4 --with_photon --adaptive_res_and_x0 -r --iter_num 2  --concat_origin --resid_model_path "the path of the ckpt"
 
+python3 test_SID.py --model eld_iter_model --model_path "the path of the ckpt" --include 4 --with_photon --adaptive_res_and_x0 -r --iter_num 2 --concat_origin --resid_model_path "the path of the ckpt"
 
-python3 test_SID.py --model eld_iter_model --model_path "the path of the ckpt" --include 4 --with_photon --adaptive_res_and_x0 -r --iter_num 2 --netG naf2 --concat_origin --resid_model_path "the path of the ckpt"
+python3 test_LRD.py --model eld_iter_model --model_path "the path of the ckpt" --include 4 --with_photon --adaptive_res_and_x0 -r --iter_num 2 --concat_origin --resid_model_path "the path of the ckpt"
+
 ```
 ## Citation
 
 If you find our repo useful for your research, please consider citing our paper:
+
+```bibtex
+@inproceedings{hanLDR,
+    title={Low-light Image Denoising with Learnable Diffusion Prior},
+    author={Han, Longfei and Wang, Mengzhen},
+    journal={Signal, Image and Video Processing},
+    year={2025}
+}
+```
 
 ## Acknowledgement
 
